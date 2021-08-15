@@ -2,6 +2,9 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const NavBar = () => {
+    const handleCartButton = (event) => {
+        event.preventDefault();
+    };
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -15,7 +18,7 @@ const NavBar = () => {
                     <Nav.Link href="/">สินค้าแนะนำ</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="/card">
+                    <Nav.Link href="/">
                         <img
                             alt=""
                             src="https://www.nicepng.com/png/detail/853-8539483_png-file-search-button-icon-png.png"
@@ -24,7 +27,7 @@ const NavBar = () => {
                             className="d-inline-block align-top"
                         />
                     </Nav.Link>
-                    <Nav.Link href="/card">
+                    <Nav.Link href="/cart" onClick={handleCartButton}>
                         <img
                             alt=""
                             src="https://img.favpng.com/12/18/15/shopping-cart-icon-png-favpng-e5DiMUYLNYaTjdsibphFUCAxC.jpg"
