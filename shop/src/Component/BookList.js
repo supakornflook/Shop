@@ -3,12 +3,17 @@ import {Card, Row, Col, Button} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 const BookList = () => {
+    const history = useHistory();
+    function handleClick() {
+        history.push("/BookDetail");
+    }
+
     return ( 
         <div style={{ width: '60%', display: 'flex',  justifyContent:'center', alignItems:'center', marginLeft:'auto', marginRight:'auto',marginBlockStart:'2%'}}>
         <Row xs={1} md={5} className="g-4" >
             {Array.from({ length: 20 }).map((_, idx) => (
                 <Col>
-                <Card style={{ width: '100%', height:'100%', cursor:'pointer'}} onClick={event=>  window.location.href="/BookDetail"}>
+                <Card style={{ width: '100%', height:'100%', cursor:'pointer'}} onClick={handleClick}>
                     <Card.Text variant="left" style={{ fontSize: '11px', color:'#00A300'}}>
                         มีสินค้า
                     </Card.Text>
